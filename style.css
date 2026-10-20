@@ -1,0 +1,1084 @@
+/**
+ * Hexenwort Editorial — Hoja de estilos
+ * Diseño original conservado; reglas agrupadas y formateadas.
+ */
+
+/* ========================================================================
+   01. Variables, tipografía y estilos base
+   ======================================================================== */
+
+:root {
+  --bg: #14061c;
+  --p1: #2b0f3d;
+  --p2: #3e0a3d;
+  --gold: #e8d27a;
+  --gold2: #f5e275;
+  --txt: #eadfc0;
+  --line: rgba(232,210,122,.32);
+  --f: Georgia,'Palatino Linotype','Book Antiqua',serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+}
+
+html,
+body {
+  margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: linear-gradient(rgba(20,6,28,.9),rgba(20,6,28,.94)),url('assets/img/fondo.jpg') center/cover fixed,var(--bg);
+  color: var(--txt);
+  font: 1.05rem/1.75 var(--f);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--gold);
+}
+
+p {
+  margin: .7em 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+  color: var(--gold);
+  line-height: 1.3;
+  margin: 0 0 .5em;
+}
+
+h2 {
+  font-size: 1.7rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.2em;
+}
+
+h2::after,
+.orn {
+  content: "✦";
+  display: block;
+  font-size: .8rem;
+  margin-top: .6em;
+  color: var(--gold);
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.orn {
+  margin: 2.5rem 0 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  letter-spacing: .06em;
+}
+
+h4 {
+  font-size: 1.05rem;
+}
+
+h5 {
+  font-size: .8rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  margin: 1.2em 0 .2em;
+  opacity: .85;
+}
+
+.h3c,
+.cat {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: 1rem;
+  margin: 3rem 0 1.2rem;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ========================================================================
+   02. Cabecera y navegación
+   ======================================================================== */
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 10px 16px;
+  background: rgba(28,8,40,.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: none;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: 0;
+  color: var(--gold);
+  font-size: 1.6rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: .82rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-bottom: 2px solid transparent;
+  transition: .3s;
+}
+
+nav a:hover,
+nav a.active {
+  border-color: var(--gold);
+  text-shadow: 0 0 12px var(--gold);
+}
+
+/* ========================================================================
+   03. Secciones y portada principal
+   ======================================================================== */
+
+.sec {
+  padding: 100px 24px 40px;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sec+.sec .wrap::before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0 auto 70px;
+  max-width: 500px;
+  background: linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.hero {
+  text-align: center;
+  padding-top: 130px;
+}
+
+.hero .wrap::before {
+  display: none;
+}
+
+.logo {
+  width: 260px;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 0 18px rgba(232,210,122,.35));
+}
+
+.kicker {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  font-size: .85rem;
+  color: var(--gold);
+}
+
+.magic-text {
+  font-size: clamp(1.6rem,4.5vw,2.8rem);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 6px rgba(232,210,122,.4);
+  }
+  to {
+    text-shadow: 0 0 22px rgba(232,210,122,.9);
+  }
+}
+
+.lead {
+  max-width: 720px;
+  margin: 1rem auto 1.8rem;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.cols {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.genres {
+  text-align: center;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 2rem 0;
+}
+
+.center {
+  text-align: center;
+}
+
+.big {
+  font-size: 1.4rem;
+  font-style: italic;
+}
+
+/* ========================================================================
+   04. Botones, tarjetas y distribución
+   ======================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 11px 26px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .8rem;
+  background: transparent;
+  transition: .3s;
+  cursor: pointer;
+  margin-top: .8rem;
+}
+
+.btn:hover,
+.btn.solid {
+  background: var(--gold);
+  color: var(--p2);
+  box-shadow: 0 0 18px rgba(232,210,122,.5);
+}
+
+.btn.solid:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.btn.off {
+  opacity: .55;
+  cursor: default;
+  border-style: dashed;
+}
+
+.btn.off:hover {
+  background: none;
+  color: var(--gold);
+  box-shadow: none;
+}
+
+.cta {
+  text-align: center;
+  margin: 2.5rem 0;
+}
+
+.card {
+  background: linear-gradient(160deg,rgba(62,10,61,.72),rgba(28,8,40,.85));
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 26px;
+  transition: .35s;
+}
+
+.card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 22px rgba(232,210,122,.18);
+  transform: translateY(-3px);
+}
+
+.grid {
+  display: grid;
+  gap: 22px;
+}
+
+.g3 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr));
+}
+
+.g2 {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+.g1 {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/*
+ * Cinco pasos: tres tarjetas en la primera fila y las dos últimas centradas.
+ * Evita columnas estrechas y párrafos partidos en pantallas intermedias.
+ */
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+}
+
+.steps > .card {
+  flex: 0 1 calc((100% - 44px) / 3);
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.num {
+  display: block;
+  font-size: 2rem;
+  color: var(--gold);
+  opacity: .55;
+  line-height: 1;
+}
+
+.ask,
+.ctrl {
+  text-align: center;
+  max-width: 780px;
+  margin: 2.5rem auto;
+}
+
+.ctrl {
+  border-color: var(--gold);
+}
+
+.sub {
+  max-width: 780px;
+  margin: 2.5rem auto;
+}
+
+.sub h3 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+
+blockquote {
+  max-width: 760px;
+  margin: 3rem auto;
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  padding: 1.5rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.note {
+  max-width: 780px;
+  margin: 2.5rem auto;
+  padding: 20px 26px;
+  border-left: 3px solid var(--gold);
+  background: rgba(43,15,61,.6);
+  font-size: .95rem;
+}
+
+/* ========================================================================
+   05. Packs y servicios
+   ======================================================================== */
+
+.pack {
+  display: flex;
+  flex-direction: column;
+}
+
+.pack .icon {
+  font-size: 2rem;
+  color: var(--gold);
+  height: 42px;
+}
+
+.pack .icon img {
+  height: 36px;
+  width: auto;
+}
+
+.pack .sb {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.pack ul {
+  padding-left: 1.1rem;
+  margin: .3rem 0;
+}
+
+.pack li::marker {
+  color: var(--gold);
+}
+
+.pack li.gift {
+  list-style: "✦ ";
+  color: var(--gold2);
+}
+
+.pack .ideal {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-size: .92rem;
+}
+
+/* Centra los CTA y mantiene la misma anchura en todos los packs. */
+.pack .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: min(100%, 270px);
+  min-height: 46px;
+  text-align: center;
+  line-height: 1.45;
+}
+
+/* ========================================================================
+   06. Catálogo de libros y carrusel
+   ======================================================================== */
+
+/* Fichas editoriales: portada a un lado y sinopsis al otro. */
+.book {
+  display: grid;
+  grid-template-columns: minmax(205px, 285px) minmax(0, 1fr);
+  gap: clamp(22px, 3vw, 36px);
+  align-items: start;
+  margin: 3rem 0;
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid var(--line);
+  background: rgba(28, 8, 40, .76);
+  border-radius: 6px;
+}
+
+/* Alterna las portadas en escritorio sin cambiar el orden de lectura. */
+.book:nth-of-type(even) { grid-template-columns: minmax(0, 1fr) minmax(205px, 285px); }
+.book:nth-of-type(even) .cover { order: 2; }
+.book h3 { font-size: clamp(1.2rem, 2vw, 1.48rem); letter-spacing: .08em; text-transform: uppercase; }
+.book .info { min-width: 0; }
+.book .meta { font-size: .93rem; line-height: 1.6; }
+.book .syn { text-align: left; }
+.book .syn + .syn { margin-top: .7rem; }
+.book .syn-note { margin-top: 1.1rem; font-style: italic; color: var(--gold); }
+.book .availability-note { font-size: .9rem; opacity: .9; }
+
+/*
+ * PORTADAS SIN MARCOS
+ *
+ * Todas las imágenes disponen de una zona de exposición de tamaño similar,
+ * pero el contenedor es invisible: no hay bordes, fondos ni recuadros.
+ * object-fit: contain muestra TODA la imagen, también si es un mockup 3D,
+ * sin deformar, estirar ni recortar sus bordes.
+ * Los src del HTML permanecen intactos.
+ */
+.book .cover {
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.cover-frame {
+  position: relative;
+  width: 100%;
+  height: clamp(265px, 30vw, 345px);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  isolation: isolate;
+  aspect-ratio: auto;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* El antiguo borde decorativo deja de dibujarse. */
+.cover-frame::before {
+  content: none;
+}
+
+.cover-frame > img {
+  display: block;
+  position: relative;
+  inset: auto;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0;
+  filter: drop-shadow(0 10px 14px rgba(0, 0, 0, .32));
+  transition: opacity .3s ease;
+}
+
+.cover-frame.is-loaded > img {
+  opacity: 1;
+}
+
+.cover-frame.is-loaded .cover-placeholder {
+  display: none;
+}
+
+/* Texto discreto de reserva cuando aún no se ha subido una imagen. */
+.cover-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .85rem;
+  padding: 18px;
+  text-align: center;
+  color: var(--gold);
+  border: 0;
+  background: transparent;
+}
+
+.cover-placeholder .placeholder-star { font-size: 2rem; line-height: 1; opacity: .8; }
+.cover-placeholder .placeholder-label { font-size: .58rem; letter-spacing: .24em; opacity: .72; }
+.cover-placeholder strong { font-size: clamp(.85rem, 1.5vw, 1.08rem); line-height: 1.55; letter-spacing: .09em; font-weight: normal; }
+.cover-placeholder .placeholder-hint { font-size: .68rem; font-style: italic; opacity: .7; }
+
+/* Carrusel: mismo tamaño y proporciones que las portadas individuales. */
+.car {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.track {
+  display: flex;
+  overflow: hidden;
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  transition: transform .5s ease;
+}
+
+.slide .cover-frame {
+  width: 100%;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+  padding: 9px 12px;
+  background: rgba(232, 210, 122, .94);
+  color: var(--p2);
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  font: inherit;
+  transition: background .2s ease;
+}
+.prev:hover, .next:hover { background: #fff1a5; }
+.prev { left: 0; }
+.next { right: 0; }
+.carousel-status {
+  position: absolute;
+  z-index: 3;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2px 10px;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: rgba(20, 6, 28, .85);
+  color: var(--gold);
+  font-size: .72rem;
+  white-space: nowrap;
+}
+
+/* ========================================================================
+   07. Equipo, contacto y preguntas frecuentes
+   ======================================================================== */
+
+.role {
+  color: var(--gold);
+  font-style: italic;
+  margin-top: 0;
+}
+
+.mail {
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.mail .grid {
+  text-align: left;
+  margin: 1.2rem 0;
+}
+
+.mail h4 {
+  margin-top: 1rem;
+}
+
+.chips {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips li {
+  border: 1px solid var(--line);
+  padding: 3px 12px;
+  font-size: .85rem;
+  border-radius: 20px;
+}
+
+.direct {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.direct .card {
+  text-align: center;
+}
+
+.social {
+  margin-top: 2rem;
+}
+
+.contact-link {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  color: var(--gold);
+}
+
+.copy-button {
+  background: var(--gold);
+  color: var(--p2);
+  border: 0;
+  padding: 3px 9px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.faqcat {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.cat {
+  text-align: left;
+  margin-top: 2.5rem;
+}
+
+details {
+  border-bottom: 1px solid var(--line);
+}
+
+summary {
+  cursor: pointer;
+  padding: 14px 30px 14px 0;
+  color: var(--txt);
+  list-style: none;
+  position: relative;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  color: var(--gold);
+  font-size: 1.4rem;
+  top: 8px;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+details[open] summary {
+  color: var(--gold);
+}
+
+.ans {
+  padding: 0 0 12px;
+  font-size: .98rem;
+}
+
+/* ========================================================================
+   08. Pie de página y ventanas legales
+   ======================================================================== */
+
+footer {
+  margin-top: 4rem;
+  padding: 24px 16px;
+  text-align: center;
+  background: rgba(28,8,40,.92);
+  border-top: 1px solid var(--line);
+  font-size: .9rem;
+}
+
+footer p {
+  margin: .3em;
+}
+
+footer button,
+.close {
+  background: none;
+  border: 0;
+  color: var(--gold);
+  cursor: pointer;
+  font: inherit;
+  text-decoration: underline;
+}
+
+dialog {
+  width: 92%;
+  max-width: 780px;
+  max-height: 86vh;
+  background: #1c0b28;
+  color: var(--txt);
+  border: 1px solid var(--gold);
+  padding: 28px 32px;
+  font-size: .95rem;
+}
+
+dialog::backdrop {
+  background: rgba(0,0,0,.75);
+}
+
+dialog h2 {
+  font-size: 1.4rem;
+}
+
+dialog h4 {
+  margin-top: 1.5em;
+}
+
+.close {
+  position: sticky;
+  top: 0;
+  float: right;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+/* ========================================================================
+   09. Notificaciones, animaciones y efectos
+   ======================================================================== */
+
+#toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--gold);
+  color: var(--p2);
+  padding: 10px 20px;
+  transition: .4s;
+  z-index: 2000;
+}
+
+#toast.show {
+  transform: translateX(-50%);
+}
+
+.js .rv {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .8s,transform .8s;
+}
+
+.js .rv.in {
+  opacity: 1;
+  transform: none;
+}
+
+.magic-trail {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 10px var(--gold);
+  pointer-events: none;
+  z-index: 1500;
+  animation: fo .6s forwards;
+}
+
+@keyframes fo {
+  to {
+    opacity: 0;
+    transform: scale(2) translateY(10px);
+  }
+}
+
+/* ========================================================================
+   10. Diseño adaptable y preferencias de movimiento
+   ======================================================================== */
+
+/* Accesibilidad: foco visible para enlaces, botones y desplegables. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--gold2);
+  outline-offset: 3px;
+}
+
+
+@media (max-width: 1000px) {
+  .brand {
+    display: block;
+  }
+  .menu-container {
+    justify-content: space-between;
+  }
+  .menu-button {
+    display: block;
+    margin: 0;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(28,8,40,.98);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.active {
+    display: flex;
+  }
+  nav a {
+    text-align: center;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+  .sec {
+    padding: 90px 16px 30px;
+  }
+  .book,
+  .book:nth-of-type(even) {
+    grid-template-columns: 1fr;
+  }
+  .book:nth-of-type(even) .cover {
+    order: 0;
+  }
+  .syn {
+    text-align: left;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  .logo {
+    width: 200px;
+  }
+  dialog {
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .js .rv {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Ajustes responsive de las fichas del catálogo sin marcos. */
+@media (max-width: 768px) {
+  .book, .book:nth-of-type(even) { grid-template-columns: minmax(0, 1fr); }
+  .book:nth-of-type(even) .cover { order: 0; }
+  .book .cover { width: min(100%, 290px); margin-inline: auto; }
+  .book .cover-frame { height: 330px; }
+  .book .info { width: 100%; }
+  .cover-placeholder strong { font-size: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide, .cover-frame > img { transition: none; }
+}
+
+/* ========================================================================
+   11. Ajustes solicitados: pasos, packs y portadas
+   ======================================================================== */
+
+@media (max-width: 950px) {
+  .steps > .card {
+    flex-basis: calc((100% - 22px) / 2);
+  }
+}
+
+@media (max-width: 650px) {
+  .steps > .card {
+    flex-basis: 100%;
+  }
+
+  /* Botones siempre centrados y legibles también en pantallas pequeñas. */
+  .pack .btn {
+    max-width: 100%;
+  }
+
+  /* Tamaño contenido también en pantallas pequeñas. */
+  .book .cover,
+  .book .cover-frame {
+    max-width: 100%;
+  }
+
+  .book .cover-frame {
+    height: 295px;
+  }
+}
+
+/* ========================================================================
+   12. Servicios: tarjetas homogéneas y desplegable exclusivo de ISBN
+   ======================================================================== */
+
+/* Las tres categorías comparten el mismo ancho y alto mínimo de tarjeta. */
+#servicios .services-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(280px, 1fr);
+  align-items: stretch;
+}
+
+#servicios .service-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 280px;
+}
+
+#servicios .service-card h4 {
+  overflow-wrap: break-word;
+  margin-bottom: .5rem;
+}
+
+#servicios .service-description {
+  margin: 0;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+}
+
+/*
+ * Solo la ficha ISBN tiene texto plegable. El resto siempre se ve completo.
+ * Sin JavaScript, incluso ISBN muestra la descripción íntegra.
+ */
+#servicios.services-enhanced .isbn-card:not(.is-expanded) .service-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+#servicios .service-toggle {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: .6rem 0 0;
+  border: 0;
+  background: transparent;
+  color: var(--gold);
+  font: inherit;
+  font-size: .92rem;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+#servicios .service-toggle:hover {
+  color: var(--gold2);
+}
+
+#servicios .service-toggle[hidden] {
+  display: none;
+}
+
+/* En la fila abierta, las demás tarjetas mantienen su mismo alto. */
+#servicios .service-card.is-expanded {
+  border-color: var(--gold);
+}
+
+/* Mismos puntos de adaptación que el bloque de cinco pasos. */
+@media (max-width: 950px) {
+  #servicios .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  #servicios .services-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #servicios .service-card {
+    min-height: 260px;
+  }
+
+  #servicios .services-grid {
+    grid-auto-rows: minmax(260px, 1fr);
+  }
+}
